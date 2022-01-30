@@ -1,4 +1,5 @@
 import 'package:auth_page/expanded_demo_screen.dart';
+import 'package:auth_page/global_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         color: Color(0xFF0079D0));
 
     return MaterialApp(
+      theme: globalTheme(),
       home: Scaffold(
           body: Container(
             decoration: BoxDecoration(
@@ -39,13 +41,13 @@ class MyApp extends StatelessWidget {
             const SizedBox(width: 110,height: 84, child: Image(image:AssetImage('assets/dart-logo.png')),),
             SizedBox(height: 20,),
             Text('Введите логин в виде 10 цифр номера телефона',
-                style: TextStyle(fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.6)),),
+                style: Theme.of(context).textTheme.headline5,),
             SizedBox(height: 20,),
             TextField(
               keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Color(0xffecedf1),
+                fillColor: Theme.of(context).colorScheme.secondaryVariant,
                 enabledBorder: borderStyle,
                 focusedBorder: borderStyle,
                 labelText: 'Телефон',
@@ -57,7 +59,7 @@ class MyApp extends StatelessWidget {
                            obscureText: true,
                            decoration: InputDecoration(
                              filled: true,
-                             fillColor: Color(0xffecedf1),
+                             fillColor:Theme.of(context).colorScheme.secondaryVariant,
                              enabledBorder: borderStyle,
                              focusedBorder: borderStyle,
                              labelText: 'Пароль',
